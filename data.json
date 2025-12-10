@@ -14,6 +14,13 @@
       "condition": "10/10",
       "image": "/images/uploads/lanvin.jpg",
       "body": "Полный комплект"
+    },
+    {
+      "title": "Худи Gucci",
+      "price": 22000,
+      "size": "L-XL",
+      "condition": "10/10",
+      "image": "/images/uploads/2025-12-11-00.02.21.jpg"
     }
   ]
 }
