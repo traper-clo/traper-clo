@@ -33,8 +33,16 @@ function renderProducts(products) {
         const card = document.createElement('div');
         card.classList.add('product-card');
 
-        // Проверяем, есть ли картинка, иначе ставим заглушку
+        // 1. Проверка картинки (если нет, ставим заглушку)
         const imageSrc = item.image ? item.image : 'https://via.placeholder.com/400x400?text=No+Image';
+
+        // 2. Умная проверка описания
+        // Если описание есть (item.body), мы создаем блок с текстом.
+        // Если описания нет, мы оставляем пустую строку, чтобы не было слова "undefined" и лишних полос.
+        let descriptionHtml = '';
+        if (item.body && item.body.trim() !== "") {
+            descriptionHtml = `<div class="product-desc">${item.body}</div>`;
+        }
 
         card.innerHTML = `
             <div class="image-container">
@@ -49,9 +57,7 @@ function renderProducts(products) {
                     <span class="badge">${item.size}</span>
                     <span>Состояние: ${item.condition}</span>
                 </div>
-                <div class="product-desc">
-                    ${item.body}
-                </div>
+                ${descriptionHtml}
             </div>
         `;
         container.appendChild(card);
