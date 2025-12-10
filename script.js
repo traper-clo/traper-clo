@@ -43,7 +43,7 @@ function renderProducts(products) {
             <div class="product-info">
                 <div class="product-top">
                     <div class="product-title">${item.title}</div>
-                    <div class="product-price">${item.price} ₽</div>
+                    <div class="product-price">${item.price} ₴</div>
                 </div>
                 <div class="product-details">
                     <span class="badge">${item.size}</span>
