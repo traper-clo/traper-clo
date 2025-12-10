@@ -1,12 +1,12 @@
 {
   "products": [
     {
-      "title": "Louis Vuitton Bag",
       "price": 15000,
-      "size": "One Size",
-      "condition": "9/10",
-      "image": "https://en.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-carryall-pm-bag--M46203_PM1_Back%20view.jpg?impolicy=bgcolor&bgcolor=%23f8f8f8",
-      "body": "Новая сумка Лв"
+      "title": "Amiri Jeans",
+      "size": "M",
+      "condition": "Новое",
+      "image": "https://newlife.moda/uploads/media/products/0123/62/amiri-hlopok-zauzhennye-dzhinsy_12261596_xl.jpeg",
+      "body": "+"
     }
   ]
 }
