@@ -1,9 +1,14 @@
 backend:
   name: git-gateway
-  branch: main # Проверь, что твоя ветка называется main
+  branch: main # Ветка должна совпадать с твоей на GitHub (обычно main)
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
+
+# Отключаем создание папок для каждого товара, чтобы все падало в один файл
+slug:
+  encoding: "ascii"
+  clean_accents: true
 
 collections:
   - name: "content"
@@ -18,11 +23,17 @@ collections:
             widget: "list"
             fields:
               - {label: "Название", name: "title", widget: "string"}
+              
+              # Исправили тут. Было "Цена (RUB)", стало "Цена":
               - {label: "Цена", name: "price", widget: "number"}
-              # Раньше тут был select, теперь просто строка для ввода вручную:
-              - {label: "Размер", name: "size", widget: "string"} 
-              # И тут теперь строка, можешь писать что угодно:
+              
+              # Текстовое поле для размера (пиши хоть L, хоть 42, хоть 32/34):
+              - {label: "Размер", name: "size", widget: "string"}
+              
+              # Текстовое поле для состояния:
               - {label: "Состояние", name: "condition", widget: "string"}
+              
               - {label: "Фото", name: "image", widget: "image"}
-              # Добавили required: false, теперь описание не обязательно:
+              
+              # Описание не обязательно (required: false):
               - {label: "Описание", name: "body", widget: "text", required: false}
