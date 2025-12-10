@@ -2,9 +2,38 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>TRAPER CLO | Admin</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <style>
+      /* Глобальные настройки для мобилок */
+      @media (max-width: 768px) {
+        /* Уменьшаем размер текста в админке */
+        body {
+          font-size: 14px !important;
+        }
+        
+        /* Пытаемся сделать верхнюю шапку компактнее */
+        div[class*="AppHeader"] {
+           height: 50px !important;
+           min-height: 50px !important;
+        }
+
+        /* Делаем боковое меню более узким, если оно вылезает */
+        div[class*="Sidebar"] {
+           width: 80% !important;
+           max-width: 300px !important;
+           box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+        }
+
+        /* Исправляем скролл, чтобы страница не дергалась */
+        html, body {
+            overflow-x: hidden;
+            width: 100vw;
+        }
+      }
+    </style>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
