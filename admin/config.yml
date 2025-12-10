@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "content"
+    label: "Контент"
+    files:
+      - file: "data.json"
+        label: "Товары"
+        name: "products"
+        fields:
+          - label: "Список товаров"
+            name: "products"
+            widget: "list"
+            fields:
+              - {label: "Название", name: "title", widget: "string"}
+              - {label: "Цена (RUB)", name: "price", widget: "number"}
+              - {label: "Размер", name: "size", widget: "select", options: ["XS", "S", "M", "L", "XL", "XXL", "One Size"]}
+              - {label: "Состояние", name: "condition", widget: "select", options: ["Новое", "9/10", "8/10", "Vintage"]}
+              - {label: "Фото", name: "image", widget: "image"}
+              - {label: "Описание", name: "body", widget: "text"}
