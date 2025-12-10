@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main # Проверь, что твоя ветка называется main
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -19,7 +19,10 @@ collections:
             fields:
               - {label: "Название", name: "title", widget: "string"}
               - {label: "Цена", name: "price", widget: "number"}
-              - {label: "Размер", name: "size", widget: "select", options: ["XS", "S", "M", "L", "XL", "XXL", "One Size"]}
-              - {label: "Состояние", name: "condition", widget: "select", options: ["Новое", "9/10", "8/10", "Vintage"]}
+              # Раньше тут был select, теперь просто строка для ввода вручную:
+              - {label: "Размер", name: "size", widget: "string"} 
+              # И тут теперь строка, можешь писать что угодно:
+              - {label: "Состояние", name: "condition", widget: "string"}
               - {label: "Фото", name: "image", widget: "image"}
-              - {label: "Описание", name: "body", widget: "text"}
+              # Добавили required: false, теперь описание не обязательно:
+              - {label: "Описание", name: "body", widget: "text", required: false}
