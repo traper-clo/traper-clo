@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAPER CLO</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Traper Clo</h1>
+        <p class="subtitle">Selected Clothing & Archival Pieces</p>
+    </header>
+
+    <div class="container">
+        <div id="product-list" class="product-grid">
+            <p style="text-align:center; width:100%;">Загрузка товаров...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Код для перенаправления после логина (стандарт Netlify)
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
